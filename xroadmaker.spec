@@ -1,5 +1,5 @@
 Summary:	XroadMaker
-Summary(pl):	xroadmaker
+Summary(pl):	XroadMaker
 Name:		xroadmaker
 Version:	0.5.5
 Release:	2
@@ -8,18 +8,17 @@ Group:		X11/Applications/Graphics
 Group(de):	X11/Applikationen/Grafik
 Group(pl):	X11/Aplikacje/Grafika
 Group(pt):	X11/Aplicações/Gráficos
-Source0:	%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/xroadmaker/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
+URL:		http://xroadmaker.sourceforge.net/
 BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	gnome-libs-devel >= 1.0.57
-#Requires:	
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 
 %description
-Applications/Communications
-
+XRoadMaker is a gnome printed circuit board designer.
 
 %prep
 %setup -q
