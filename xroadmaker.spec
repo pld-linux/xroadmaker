@@ -3,34 +3,33 @@ Summary(pl):	xroadmaker
 Name:		xroadmaker
 Version:	0.5.5
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		X11/CAD
+######		Unknown group!
 Group(pl):	X11/CAD
 Source0:	%name-%version.tar.gz
 Patch0:		%name-DESTDIR.patch
 BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	gnome-libs-devel >= 1.0.57
 #Requires:	
-Buildroot:	/tmp/%{name}-%{version}-root-%(id -u -n)
+Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	_prefix	/usr/X11R6
+%define		_prefix		/usr/X11R6
 
 %description
 Applications/Communications
 
 %description -l pl
 
-
 %prep
 %setup -q
-
 %patch
 
 %build
-CXXFLAGS="-Wall $RPM_OTP_FLAGS" \
+CXXFLAGS="-Wall %{rpmcflags}"
 %configure --prefix=%{_prefix}
 (cd src; cp -f support_custom.c support.c;cp -f support_custom.h support.h)
-%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
