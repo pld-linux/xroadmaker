@@ -5,14 +5,13 @@ Version:	0.5.6
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/xroadmaker/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/xroadmaker/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://xroadmaker.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	gnome-libs-devel >= 1.0.57
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 XRoadMaker is a gnome printed circuit board designer.
