@@ -9,7 +9,6 @@ Group(pl):	X11/CAD
 Source0:	%name-%version.tar.gz
 Patch0:		%name-DESTDIR.patch
 BuildRequires:	gtk+-devel >= 1.2.2
-BuildRequires:	XFree86-devel >= 3.3.5
 BuildRequires:	gnome-libs-devel >= 1.0.57
 #Requires:	
 Buildroot:	/tmp/%{name}-%{version}-root-%(id -u -n)
