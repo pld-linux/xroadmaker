@@ -5,9 +5,6 @@ Version:	0.5.6
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Group(de):	X11/Applikationen/Grafik
-Group(pl):	X11/Aplikacje/Grafika
-Group(pt):	X11/Aplicações/Gráficos
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/xroadmaker/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://xroadmaker.sourceforge.net/
