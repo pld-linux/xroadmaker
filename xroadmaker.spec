@@ -30,11 +30,11 @@ Applications/Communications
 CXXFLAGS="-Wall $RPM_OTP_FLAGS" \
 %configure --prefix=%{_prefix}
 (cd src; cp -f support_custom.c support.c;cp -f support_custom.h support.h)
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make DESTDIR=$RPM_BUILD_ROOT install
+%{__make} DESTDIR=$RPM_BUILD_ROOT install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
