@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/xroadmaker/%{name}-%{version}.tar.gz
+# Source0-md5:	7261fa0c6d55577cbb4ea11bcaa6e1f5
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://xroadmaker.sourceforge.net/
 BuildRequires:	autoconf
