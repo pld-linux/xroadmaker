@@ -15,7 +15,7 @@ BuildRequires:	gnome-libs-devel >= 1.0.57
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-XRoadMaker is a gnome printed circuit board designer.
+XRoadMaker is a GNOME printed circuit board designer.
 
 %description -l pl
 XRoadMaker jest narzêdziem do projektowania p³ytek drukowanych dla
