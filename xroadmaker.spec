@@ -13,7 +13,6 @@ BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	gnome-libs-devel >= 1.0.57
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 XRoadMaker is a gnome printed circuit board designer.
