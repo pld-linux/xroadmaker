@@ -1,8 +1,8 @@
-Summary:	XroadMaker
-Summary(pl):	XroadMaker
+Summary:	XroadMaker - printed circuit board designer
+Summary(pl):	XroadMaker - program do projektowania p³ytek drukowanych
 Name:		xroadmaker
-Version:	0.5.5
-Release:	2
+Version:	0.5.6
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Group(de):	X11/Applikationen/Grafik
@@ -14,7 +14,7 @@ URL:		http://xroadmaker.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	gnome-libs-devel >= 1.0.57
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 
@@ -22,33 +22,38 @@ Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 XRoadMaker is a gnome printed circuit board designer.
 
 %description -l pl
-XRoadMaker jest narzêdziem do projektowania p³ytek drukowanych.
+XRoadMaker jest narzêdziem do projektowania p³ytek drukowanych dla
+GNOME.
 
 %prep
 %setup -q
-%patch
+%patch -p1
 
 %build
-CXXFLAGS="-Wall %{rpmcflags}"
+#CXXFLAGS="-Wall %{rpmcflags}"
 
 autoconf
-%configure --prefix=%{_prefix}
+%configure
 (cd src; cp -f support_custom.c support.c;cp -f support_custom.h support.h)
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
+%{__make}
+#RPM_OPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
+
+gzip -9nf AUTHORS ChangeLog HISTORY README USAGE
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc
+%doc *.gz
 %attr(755,root,root) %{_bindir}/xroadmaker
-%attr(644,root,root) %{_datadir}/%{name}/config/*
-%attr(644,root,root) %{_datadir}/%{name}/libs/*
+%dir %{_datadir}/%{name}
+%attr(644,root,root) %{_datadir}/%{name}/config
+%attr(644,root,root) %{_datadir}/%{name}/libs
 
 %dir %{_pixmapsdir}/%{name}
 %attr(644,root,root) %{_pixmapsdir}/%{name}/*.xpm

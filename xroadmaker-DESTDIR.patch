@@ -1,15 +1,33 @@
---- config/Makefile.am.org	Sat Apr  1 19:13:45 2000
-+++ config/Makefile.am	Sat Apr  1 19:13:56 2000
-@@ -4,5 +4,5 @@
+diff -Nur xroadmaker-0.5.6.orig/Makefile.am xroadmaker-0.5.6/Makefile.am
+--- xroadmaker-0.5.6.orig/Makefile.am	Sun Apr  2 19:07:20 2000
++++ xroadmaker-0.5.6/Makefile.am	Thu Nov  1 23:42:55 2001
+@@ -5,9 +5,9 @@
+ EXTRA_DIST = $(DOC)
+ 
+ install-data-am : 
+-	install -m 755 -d  $(prefix)/share/$(PACKAGE)
+-	install -d -m 755 $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	install -m 644 $(DOC) $(prefix)/doc/$(PACKAGE)-$(VERSION)
++	install -m 755 -d  $(DESTDIR)$(prefix)/share/$(PACKAGE)
++	install -d -m 755 $(DESTDIR)$(prefix)/doc/$(PACKAGE)-$(VERSION)
++	install -m 644 $(DOC) $(DESTDIR)$(prefix)/doc/$(PACKAGE)-$(VERSION)
+ 
+ rpm : $(PACKAGE)-$(VERSION).tar.gz
+ 	cp $(PACKAGE)-$(VERSION).tar.gz /usr/src/RPM/SOURCES
+diff -Nur xroadmaker-0.5.6.orig/config/Makefile.am xroadmaker-0.5.6/config/Makefile.am
+--- xroadmaker-0.5.6.orig/config/Makefile.am	Sun Apr  2 17:51:34 2000
++++ xroadmaker-0.5.6/config/Makefile.am	Thu Nov  1 23:43:52 2001
+@@ -3,5 +3,5 @@
  EXTRA_DIST= xroadmaker.conf 
  
  install-data-am : 
 -	install -d -m 755 $(prefix)/share/$(PACKAGE)/config
--	install -m 644 xroadmaker.conf $(prefix)/share/$(PACKAGE)/config
+-	install -m 644 $(EXTRA_DIST) $(prefix)/share/$(PACKAGE)/config
 +	install -d -m 755 $(DESTDIR)$(prefix)/share/$(PACKAGE)/config
-+	install -m 644 xroadmaker.conf $(DESTDIR)$(prefix)/share/$(PACKAGE)/config
---- libs/Makefile.am.org	Sun Mar 19 18:01:37 2000
-+++ libs/Makefile.am	Sat Apr  1 19:14:35 2000
++	install -m 644 $(EXTRA_DIST) $(DESTDIR)$(prefix)/share/$(PACKAGE)/config
+diff -Nur xroadmaker-0.5.6.orig/libs/Makefile.am xroadmaker-0.5.6/libs/Makefile.am
+--- xroadmaker-0.5.6.orig/libs/Makefile.am	Sun Mar 19 18:01:37 2000
++++ xroadmaker-0.5.6/libs/Makefile.am	Thu Nov  1 23:39:52 2001
 @@ -4,6 +4,6 @@
  EXTRA_DIST= standard.compdesclib  dil.layoutlib  pin.spotlib  stdcomponent.set 
  
@@ -19,8 +37,9 @@
 +	install -m 755 -d  $(DESTDIR)$(prefix)/share/$(PACKAGE)/libs
 +	install -m 644 $(EXTRA_DIST) $(DESTDIR)$(prefix)/share/$(PACKAGE)/libs
  
---- pixmaps/Makefile.am.org	Sun Mar 12 12:04:10 2000
-+++ pixmaps/Makefile.am	Sat Apr  1 19:15:03 2000
+diff -Nur xroadmaker-0.5.6.orig/pixmaps/Makefile.am xroadmaker-0.5.6/pixmaps/Makefile.am
+--- xroadmaker-0.5.6.orig/pixmaps/Makefile.am	Sun Mar 12 12:04:10 2000
++++ xroadmaker-0.5.6/pixmaps/Makefile.am	Thu Nov  1 23:39:52 2001
 @@ -3,5 +3,5 @@
  EXTRA_DIST=  about.xpm endok.xpm road.xpm track.xpm all.xpm full.xpm roadselect.xpm trackselect.xpm attachpoint.xpm invert.xpm route.xpm undraw.xpm bycolor.xpm mainwindow.xpm  splashscreen.xpm zoomin.xpm circuit.xpm move.xpm startok.xpm zoomout.xpm component.xpm none.xpm subfunction.xpm componenttool.xpm  notfull.xpm subfunctiontool.xpm draw.xpm paint.xpm trace.xpm 
  
@@ -29,14 +48,3 @@
 -	install -m 644 $(EXTRA_DIST) $(prefix)/share/pixmaps/$(PACKAGE)
 +	install -d -m 755 $(DESTDIR)$(prefix)/share/pixmaps/$(PACKAGE)
 +	install -m 644 $(EXTRA_DIST) $(DESTDIR)$(prefix)/share/pixmaps/$(PACKAGE)
---- Makefile.am.org	Sun Mar 12 12:26:21 2000
-+++ Makefile.am	Sat Apr  1 19:15:31 2000
-@@ -4,7 +4,7 @@
- EXTRA_DIST = README INSTALL ChangeLog USAGE COPYING TODO
- 
- install-data-am : 
--	install -m 755 -d  $(prefix)/share/$(PACKAGE)
-+	install -m 755 -d  $(DESTDIR)$(prefix)/share/$(PACKAGE)
- 
- rpm : $(PACKAGE)-$(VERSION).tar.gz
- 	cp $(PACKAGE)-$(VERSION).tar.gz /usr/src/RPM/SOURCES
