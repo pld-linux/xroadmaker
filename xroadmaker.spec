@@ -39,14 +39,13 @@ GNOME.
 rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
-gzip -9nf AUTHORS ChangeLog HISTORY README USAGE
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog HISTORY README USAGE
 %attr(755,root,root) %{_bindir}/xroadmaker
 %dir %{_datadir}/%{name}
 %attr(644,root,root) %{_datadir}/%{name}/config
