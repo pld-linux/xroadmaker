@@ -29,7 +29,7 @@ GNOME.
 %build
 #CXXFLAGS="-Wall %{rpmcflags}"
 
-autoconf
+%{__autoconf}
 %configure
 (cd src; cp -f support_custom.c support.c;cp -f support_custom.h support.h)
 %{__make}
