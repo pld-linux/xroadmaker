@@ -10,8 +10,8 @@ Source0:	http://dl.sourceforge.net/xroadmaker/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://xroadmaker.sourceforge.net/
 BuildRequires:	autoconf
-BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	gnome-libs-devel >= 1.0.57
+BuildRequires:	gtk+-devel >= 1.2.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,8 +47,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog HISTORY README USAGE
 %attr(755,root,root) %{_bindir}/xroadmaker
 %dir %{_datadir}/%{name}
-%attr(644,root,root) %{_datadir}/%{name}/config
-%attr(644,root,root) %{_datadir}/%{name}/libs
+%{_datadir}/%{name}/config
+%{_datadir}/%{name}/libs
 
 %dir %{_pixmapsdir}/%{name}
-%attr(644,root,root) %{_pixmapsdir}/%{name}/*.xpm
+%{_pixmapsdir}/%{name}/*.xpm
