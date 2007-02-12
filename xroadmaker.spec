@@ -1,5 +1,5 @@
 Summary:	XroadMaker - printed circuit board designer
-Summary(pl.UTF-8):   XroadMaker - program do projektowania płytek drukowanych
+Summary(pl.UTF-8):	XroadMaker - program do projektowania płytek drukowanych
 Name:		xroadmaker
 Version:	0.5.6
 Release:	1
