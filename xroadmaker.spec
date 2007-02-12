@@ -1,5 +1,5 @@
 Summary:	XroadMaker - printed circuit board designer
-Summary(pl):	XroadMaker - program do projektowania p³ytek drukowanych
+Summary(pl.UTF-8):   XroadMaker - program do projektowania pÅ‚ytek drukowanych
 Name:		xroadmaker
 Version:	0.5.6
 Release:	1
@@ -17,8 +17,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 XRoadMaker is a GNOME printed circuit board designer.
 
-%description -l pl
-XRoadMaker jest narzêdziem do projektowania p³ytek drukowanych dla
+%description -l pl.UTF-8
+XRoadMaker jest narzÄ™dziem do projektowania pÅ‚ytek drukowanych dla
 GNOME.
 
 %prep
